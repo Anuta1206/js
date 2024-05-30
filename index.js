@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (commentsData) {
         commentsData.data.forEach(comment => {
             const commentItem = document.createElement('li');
-            commentItem.className = 'list-group-item';
             commentItem.innerHTML = `<strong>${comment.name}:</strong> ${comment.body}`;
             commentsList.appendChild(commentItem);
         });

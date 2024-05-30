@@ -20,19 +20,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (data) {
         data.data.forEach(article => {
             const articleItem = document.createElement('a');
-            articleItem.href = `post.html?id=${article.id}`;
-            articleItem.className = 'list-group-item list-group-item-action';
+            articleItem.href = `index3.html?id=${article.id}`;
             articleItem.textContent = article.title;
             articlesList.appendChild(articleItem);
+            articlesList.appendChild(document.createElement('br'));
         });
 
         for (let i = 1; i <= data.meta.pagination.pages; i++) {
             const pageItem = document.createElement('li');
-            pageItem.className = 'page-item';
             const pageLink = document.createElement('a');
-            pageLink.className = 'page-link';
             pageLink.textContent = i;
-            pageLink.href = i === 1 ? 'index.html' : `index.html?page=${i}`;
+            pageLink.href = i === 1 ? 'index2.html' : `index2.html?page=${i}`;
             pageItem.appendChild(pageLink);
             pagination.appendChild(pageItem);
         }
